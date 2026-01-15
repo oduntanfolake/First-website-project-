@@ -27,89 +27,154 @@ header {
 
 #picture {
     background: url(../Screenshots/desktop\ gathering\ 2.png);
-    background-size: 1500px 200px;
+    background-size: 2000px 350px;
     color: white;
-    height: 300px;
+    height: 350px;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: row;
     margin: 0px;
 }
 #picture h1 {
-    padding-top: 70px;
-    font-size: 50px;
+    font-size: 80px;
+}
+
+ .services-grid {
+  display: grid;
+  /*grid-template-rows: (repeat(autofit, minmax(300px,1fr)));*/
+  gap: 20px 0px;
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 16px; 
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 30px;
+  grid-auto-rows: 400px;
+}
+.service-card1, .service-card, .service-card2 {
+    grid-column: 1/span2;
+    justify-self: center;
+    width: 80%;
 }
 
 
-/*section{
-    display: flex;
-    flex-direction: row;
-    column-gap: 20px;
+/* EACH ROW */
+.service-card, .service-card1, .service-card2 {
+  background: #fff;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  overflow: hidden;
+  /*grid-template-columns: 1.2fr 1fr;*/
+  border-radius: 30px;
+  margin: 10px 40px;
+  justify-content: center;
+ /* min-height: 250px;*/
+  height: 100% ;
 }
-.text{
-    display: flex;
-    flex-direction: column;
-}
-.images1 {
-    background-image: url(../Screenshots/desktop\ picture\ gathering.png);
-    background-size: 300px 200px;
-    height: 200px;
-    background-repeat: no-repeat;
-}
-.images2 {
-    background-image: url(../Screenshots/people\ gathering\ round\ table.png);
-    background-size: 300px 200px;
-    height: 200px;
-    /*background-color: black;*/
-    /*background-repeat: no-repeat;
-}
-.images3 {
-    background-image: url(../Screenshots/people\ gathering\ around\ normal\ table.png);
-    background-size: 300px 200px;
-    height: 200px;
-    background-repeat: no-repeat;
+
+/* IMAGE */
+/*.service-image1 {
+    border-radius:30px;
 }*/
-
-
-.features-section {
-    /*margin-bottom: 30rem;
-    margin-top: 2rem;*/
-    width: 500px;
-    margin-left: 2rem;
-    /*margin-right: 2rem;*/
+.service-image img, .service-image1 img, .service-image2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 30px;
 }
 
-.features-main-heading {
-    text-align: center;
-    margin-bottom: 8rem;
+/* TEXT FLEX AREA */
+.service-text1 {
+  background: #f5f5f5;
+  padding: 28px;
+
+  /*display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* TOP / CENTER / BOTTOM */
+  display: grid;
+  align-content: center;
+  height: 100%;
+  border-radius: 30px;
+}
+.service-text2 {
+  background: #f5f5f5;
+  padding: 28px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* TOP / CENTER / BOTTOM */
+  height: 100%;
+  border-radius: 30px;
+}
+.service-text3 {
+  background: #f5f5f5;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* TOP / CENTER / BOTTOM */
+  height: 100%;
+  border-radius: 30px;
 }
 
-.feature-headings {
-    margin-bottom: 2rem;
+/* TOP TEXT */
+.text-top h2 {
+  font-size: 26px;
 }
 
-.features-grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 15px;
-    /*This 2 align the items inside it's cells specifically grid tracks in the grid, moves it horizontally (justify-items) and vertically (align-items)*/
-    justify-items: end; /*for row*/
-    align-items: end; /*for column*/
-    /* while this other 2 aligns the gird cells inside the container if it has extra space*/
-    /*justify-content: ;
-    align-content: ;*/
+.text-top h4 {
+  margin-top: 8px;
+  color: #555;
 }
 
-.feature-img {
-    max-width: 150px;
-    height: 150px;
+/* CENTER TEXT */
+.text-center {
+  display: flex;
+  align-items: center;
 }
-/*.feature-img2 {
-    max-width: 150px;
-    height: 150px;
+
+.text-center p {
+  color: #666;
+  line-height: 1.6;
 }
-.feature-img3 {
-    max-width: 150px;
-    height: 150px;
- */
+
+/* BOTTOM TEXT */
+.text-bottom span {
+  font-weight: bold;
+  color: #111;
+  cursor: pointer;
+}
+
+footer {
+  background: rgb(3, 3, 54);
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-top: 35px;
+  height: 40px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .service-card {
+    grid-template-columns: 1fr;
+    border-radius: 30px;
+  }
+
+  .service-image {
+    height: 220px;
+    border-radius: 30px;
+  }
+  .service-image1 {
+    height: 220px;
+    border-radius: 30px;
+  }
+  .services-grid{
+  grid-template-columns: 1fr;
+  }
+}
