@@ -3,6 +3,18 @@
     padding: o;
 }
 
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(
+    to bottom,
+    red 0%,
+    purple 50%,
+    blue 100%
+);
+  background-size: 100% 200%;
+  animation: transition-element 1s ease-in-out infinite;
+}
 
 header {
     background-color: rgb(3, 3, 54);
@@ -24,6 +36,10 @@ header {
     font-size: 15px;
     padding-top: 5px;
 }
+#nav-class a:hover{
+  font-size: 20px;
+  border: white;
+}
 
 #picture {
     background: url(../Screenshots/desktop\ gathering\ 2.png);
@@ -36,9 +52,19 @@ header {
     align-items: center;
     flex-direction: row;
     margin: 0px;
+    width: 100%;
+    overflow: hidden;
+    padding: 1rem 0;
 }
 #picture h1 {
-    font-size: 80px;
+  font-size: 80px;
+  display: inline-block;
+  white-space: nowrap;
+  animation: movetext 12s linear infinite;
+}
+#picture span {
+  background: rgba(222, 148, 11, 0.6);
+  padding: 0 5px;
 }
 
  .services-grid {
@@ -62,7 +88,6 @@ header {
 
 /* EACH ROW */
 .service-card, .service-card1, .service-card2 {
-  background: #fff;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   overflow: hidden;
@@ -89,44 +114,72 @@ header {
 /* TEXT FLEX AREA */
 .service-text1 {
   background: #f5f5f5;
-  padding: 28px;
+  padding-left: 28px;
 
   /*display: flex;
   flex-direction: column;
   justify-content: space-between; /* TOP / CENTER / BOTTOM */
   display: grid;
   align-content: center;
+  justify-content: center;
   height: 100%;
   border-radius: 30px;
 }
 .service-text2 {
   background: #f5f5f5;
-  padding: 28px;
+  padding-left: 28px;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* TOP / CENTER / BOTTOM */
+  justify-content: center; /* TOP / CENTER / BOTTOM */
+  align-items: center;
+  gap: 10px;
   height: 100%;
   border-radius: 30px;
 }
 .service-text3 {
   background: #f5f5f5;
-  padding: 28px;
+  padding-left: 28px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* TOP / CENTER / BOTTOM */
+  justify-content: center; /* TOP / CENTER / BOTTOM */
+  align-items: center;
+  gap: 20px;
   height: 100%;
   border-radius: 30px;
+}
+.text-top{
+  display: flex;
+  gap: 60px;
+  flex-direction: column;
+}
+.service-text1:hover, .service-text2:hover, .service-text3:hover{
+  background-color: rgb(23, 14, 14);
+  animation-name: transition2;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+ /* padding: 60px 60px;*/
+  gap: 22px;
+}
+.service-image:hover, .service-image1:hover, .service-image2:hover {
+  animation-name: transition4;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-direction: normal;
 }
 
 /* TOP TEXT */
 .text-top h2 {
-  font-size: 26px;
+  font-size: 40px;
 }
 
 .text-top h4 {
   margin-top: 8px;
   color: #555;
+  font-size: 25px;
 }
 
 /* CENTER TEXT */
@@ -177,4 +230,45 @@ footer {
   .services-grid{
   grid-template-columns: 1fr;
   }
+}
+
+@keyframes transition2{
+  0% {transform: translate(0px, 0px);}
+  25% {transform: translate(3px, -5px);}
+  50% {transform: translate(-3px, 5px);}
+  75% {transform: translate(3px, -5px);}
+  100% {transform: translate(0px, 0px);}
+}
+@keyframes transition4 {
+  0% {transform: translate(0px, 0px);}
+  25% {transform: translate(-3px, -5px);}
+  50% {transform: translate(3px, 5px);}
+  75% {transform: translate(-3px, -5px);}
+  100% {transform: translate(0px, 0px);}
+}
+@keyframes movetext {
+  0% {
+    transform: translateX(100%);
+  }
+  20% {
+    transform: translateX(0%);
+  }
+  40% {
+    transform: 0%;
+  }
+  60% {
+    transform: -100%;
+  }
+  80% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: 100%;
+  }
+}
+
+@keyframes transition-element{
+    0% {background-position: 0% 0%;}
+    50% {background-position: 0% 100%;}
+    100% {background-position: 0% 0%;}
 }
