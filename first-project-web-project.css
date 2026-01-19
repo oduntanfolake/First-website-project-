@@ -275,6 +275,7 @@ section h1, #creating-button, .div-div h2, #line-ruling h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-left: 25px;
   z-index: 1;
 }
 

@@ -218,17 +218,12 @@ footer {
     grid-template-columns: 1fr;
     border-radius: 30px;
   }
-
-  .service-image {
-    height: 220px;
-    border-radius: 30px;
-  }
-  .service-image1 {
-    height: 220px;
-    border-radius: 30px;
-  }
+  
   .services-grid{
   grid-template-columns: 1fr;
+  }
+  #picture h1 {
+    font-size: 3rem;
   }
 }
 
